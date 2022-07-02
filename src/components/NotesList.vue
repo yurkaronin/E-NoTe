@@ -3,6 +3,28 @@
     <div class="wrapper">
       <header class="notes__header">
         <h2 class="title">Все заметки</h2>
+
+        <!-- Search -->
+        <div class="search">
+          <form action="">
+            <div class="search__wrapper">
+              <input type="text" :placeholder="placeholder" v-model="search" />
+              <button type="submit">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill="#ffffff"
+                    d="m15.7 14.3-3.1-3.1C13.5 10 14 8.6 14 7c0-3.9-3.1-7-7-7S0 3.1 0 7s3.1 7 7 7c1.6 0 3-.5 4.2-1.4l3.1 3.1c.2.2.4.3.7.3.6 0 1-.4 1-1 0-.2-.1-.5-.3-.7ZM2 7c0-2.8 2.2-5 5-5s5 2.2 5 5-2.2 5-5 5-5-2.2-5-5Z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+
         <ul class="notes__btn-list">
           <li>
             <button
@@ -46,7 +68,13 @@
       </header>
 
       <ul class="notes__list">
-        <li class="notes__item"  :grid="grid" :class="{ full: !grid }" v-for="(note, index) in notes" :key="index">
+        <li
+          class="notes__item"
+          :grid="grid"
+          :class="{ full: !grid }"
+          v-for="(note, index) in notes"
+          :key="index"
+        >
           <h3>{{ note.title }}</h3>
           <p>{{ note.description }}</p>
           <time> {{ note.date }} </time>
@@ -79,13 +107,13 @@ export default {
   data() {
     return {
       grid: true,
-    }
+    };
   },
   props: {
     notes: {
       type: Array,
       require: true,
-    }
+    },
   },
   methods: {
     removeNote(index) {
@@ -111,7 +139,7 @@ export default {
     position: relative;
     border-radius: 5px;
     transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
-    box-shadow: 0 30px 30px rgba(0,0,0,0.02);
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.02);
 
     h3 {
       margin-bottom: 12px;
@@ -135,14 +163,14 @@ export default {
     }
 
     &:hover {
-      box-shadow: 0 30px 30px rgba(0,0,0,0.04);
+      box-shadow: 0 30px 30px rgba(0, 0, 0, 0.04);
       transform: translate(0, -6px);
       transition-delay: 0s !important;
     }
   }
   &__header {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 32px;
@@ -164,6 +192,7 @@ export default {
     border: none;
     background-color: transparent;
     cursor: pointer;
+    border-radius: 5px;
 
     display: flex;
     align-items: center;
@@ -189,6 +218,7 @@ export default {
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      border-radius: 5px;
 
       svg {
         width: 90%;

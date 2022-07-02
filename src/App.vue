@@ -6,17 +6,11 @@
     </div>
     <div class="main__content">
      <div class="hero">
-      <div class="hero__left">
-        <img src="./assets/img/bg/1.jpg" alt="фоновая картинка">
-      </div>
-      <div class="hero__right">
         <!-- сообщение об ошибке  -->
       <message v-if="message" :message="message"></message>
 
       <!-- добавление новой заметки  -->
       <newNote :note="note" @addNote="addNote"></newNote>
-      </div>
-
      </div>
 
 

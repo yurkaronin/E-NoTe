@@ -37,7 +37,8 @@ export default {
   flex-direction: column;
   gap: 16px;
   margin-bottom: 64px;
-  max-width: 650px;
+  max-width: 100%;
+  width: 100%;
 
   label {
     opacity: 0.7;

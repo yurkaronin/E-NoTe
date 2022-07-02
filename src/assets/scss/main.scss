@@ -186,3 +186,29 @@ section,
     width: calc(50% - 16px);
   }
 }
+
+.search {
+  flex-grow: 2;
+  &__wrapper {
+    position: relative;
+    display: flex;
+    gap: 0;
+
+  }
+  input {
+    border-radius: 5px 0 0 5px;
+    color: #909399;
+    margin: 0;
+    height: 45px;
+  }
+  button {
+    width: 45px;
+    height: 45px;
+    background-color: #009688;
+    padding: 12px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    margin-left: -5px;
+    cursor: pointer;
+  }
+}

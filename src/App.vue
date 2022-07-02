@@ -1,5 +1,4 @@
 <template>
-
   <div class="wrapper">
     <h1 class="title">{{ title }}</h1>
 
@@ -8,16 +7,16 @@
 
     <!-- добавление новой заметки  -->
     <newNote :note="note" @addNote="addNote"></newNote>
+
     <!-- список заметок  -->
-    <noteList :notes="notes"></noteList>
+    <noteList :notes="notes" @removeNote="removeNote"></noteList>
   </div>
 </template>
 
 <script>
-import message from '@/components/MessageStatus.vue'
-import noteList from '@/components/NotesList.vue'
-import newNote from '@/components/NewNote.vue'
-
+import message from "@/components/MessageStatus.vue";
+import noteList from "@/components/NotesList.vue";
+import newNote from "@/components/NewNote.vue";
 
 export default {
   name: "App",
@@ -25,8 +24,7 @@ export default {
     message: message,
     noteList: noteList,
     newNote: newNote,
-
-},
+  },
   data() {
     return {
       title: "Мои заметки",
@@ -77,6 +75,9 @@ export default {
       this.note.title = "";
       this.note.description = "";
     },
+    removeNote (index) {
+      this.notes.splice(index, 1)
+    }
   },
 };
 </script>

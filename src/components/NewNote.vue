@@ -25,9 +25,9 @@ export default {
     },
   },
   methods: {
-    addNote () {
-      this.$emit('addNote', this.note);
-    }
+    addNote() {
+      this.$emit("addNote", this.note);
+    },
   },
 };
 </script>

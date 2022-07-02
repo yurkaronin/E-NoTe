@@ -150,4 +150,3 @@
         <newNote :note="note" @addNote="addNote"></newNote>
 
 ## Список сохранённых заметок
-

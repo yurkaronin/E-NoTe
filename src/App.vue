@@ -7,22 +7,7 @@
     <message v-if="message" :message="message"></message>
 
     <!-- добавление новой заметки  -->
-    <div class="new-note">
-      <label for="">Введите заголовок заметки</label>
-      <input
-        type="text"
-        name=""
-        id=""
-        placeholder="Ваше название"
-        v-model="note.title"
-      />
-
-      <textarea name="" id="" cols="30" rows="10" v-model="note.description">
-Текст заметки</textarea
-      >
-      <button type="submit" @click="addNote">Добавить заметку</button>
-    </div>
-
+    <newNote :note="note" @addNote="addNote"></newNote>
     <!-- список заметок  -->
     <div class="notes">
       <div class="wrapper">
@@ -40,12 +25,14 @@
 </template>
 
 <script>
-import message from '@/components/Message-status.vue'
+import message from '@/components/MessageStatus.vue'
+import newNote from '@/components/NewNote.vue'
 
 export default {
   name: "App",
   components: {
     message: message,
+    newNote: newNote,
   },
   data() {
     return {

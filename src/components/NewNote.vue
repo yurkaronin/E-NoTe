@@ -31,7 +31,7 @@ export default {
   },
 };
 </script>
-<style  lang="scss" scoped>
+<style lang="scss" scoped>
 .new-note {
   display: flex;
   flex-direction: column;
@@ -43,6 +43,8 @@ export default {
     opacity: 0.7;
     font-size: 0.95rem;
     font-style: italic;
+    margin-bottom: 0;
+    text-align: left;
   }
 
   input,
@@ -50,6 +52,8 @@ export default {
     opacity: 1;
     padding: 12px 20px;
     color: #000000;
+    margin: 0;
+    font-size: 1rem;
   }
 
   button {

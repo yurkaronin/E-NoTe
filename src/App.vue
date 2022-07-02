@@ -9,31 +9,24 @@
     <!-- добавление новой заметки  -->
     <newNote :note="note" @addNote="addNote"></newNote>
     <!-- список заметок  -->
-    <div class="notes">
-      <div class="wrapper">
-        <ul class="note" v-for="(note, index) in notes" :key="index">
-          <li class="note__header">
-            <h3>{{ note.title }}</h3>
-            <p>{{ note.description }}</p>
-            <hr />
-            <time> {{ note.date }} </time>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <noteList :notes="notes"></noteList>
   </div>
 </template>
 
 <script>
 import message from '@/components/MessageStatus.vue'
+import noteList from '@/components/NotesList.vue'
 import newNote from '@/components/NewNote.vue'
+
 
 export default {
   name: "App",
   components: {
     message: message,
+    noteList: noteList,
     newNote: newNote,
-  },
+
+},
   data() {
     return {
       title: "Мои заметки",

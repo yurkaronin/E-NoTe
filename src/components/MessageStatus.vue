@@ -18,6 +18,7 @@ export default {
 <style lang="scss" scoped>
 .message {
   background-color: rgba(255, 192, 203, 0.651);
+  margin-bottom: 12px;
 
   p {
     color: red;

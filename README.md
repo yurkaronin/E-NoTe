@@ -147,4 +147,7 @@
        import newNote from '@/components/NewNote.vue'
     мы прописали параметры:
 
-       <newNote :note="note" @addNote="addNote"></newNote>
+        <newNote :note="note" @addNote="addNote"></newNote>
+
+## Список сохранённых заметок
+

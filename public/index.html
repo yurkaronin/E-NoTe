@@ -15,20 +15,40 @@
 
   <link rel="icon" href="<%= BASE_URL %>favicon.ico">
   <title>E-NoTe: онлайн хранилище личных заметок</title>
-  <meta name="description" content="E-NoTe - это современное приложение на VUE.JS для записи и хранения онлайн заметок.">
+  <meta name="description"
+    content="E-NoTe - это современное приложение на VUE.JS для записи и хранения онлайн заметок.">
 </head>
 
 <body>
-  <noscript>
-    <h3>Русский</h3>
-    <strong>Простите, но <%= htmlWebpackPlugin.options.title %> не будет работать пока вы не включите JavaScript.</strong>
-    <hr>
-    <h3>Eng</h3>
-    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
-      Please enable it to continue.</strong>
-  </noscript>
-  <div id="app"></div>
-  <!-- built files will be auto injected -->
+  <header class="header">
+    <div class="wrapper">
+      <div class="header__logotype">
+        <img src="<%= BASE_URL %>1-min.png" alt="логотип" width="90">
+      </div>
+      <div class="header__title">
+        <span>E-NoTe</span>
+        <p>Приложение для записи и хранения заметок</p>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <noscript>
+      <h3>Русский</h3>
+      <strong>Простите, но <%= htmlWebpackPlugin.options.title %> не будет работать пока вы не включите
+        JavaScript.</strong>
+      <hr>
+      <h3>Eng</h3>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </main>
+  <footer class="footer">
+    <div class="wrapper">
+      <p></p>
+    </div>
+  </footer>
 </body>
 
 </html>

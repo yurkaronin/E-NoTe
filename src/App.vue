@@ -1,15 +1,28 @@
+
 <template>
   <div class="wrapper">
-    <h1 class="title">{{ title }}</h1>
+    <div class="main__header">
+      <!-- <h1 class="title">{{ title }}</h1> -->
+    </div>
+    <div class="main__content">
+     <div class="hero">
+      <div class="hero__left">
+        <img src="./assets/img/bg/1.jpg" alt="фоновая картинка">
+      </div>
+      <div class="hero__right">
+        <!-- сообщение об ошибке  -->
+      <message v-if="message" :message="message"></message>
 
-    <!-- сообщение об ошибке  -->
-    <message v-if="message" :message="message"></message>
+      <!-- добавление новой заметки  -->
+      <newNote :note="note" @addNote="addNote"></newNote>
+      </div>
 
-    <!-- добавление новой заметки  -->
-    <newNote :note="note" @addNote="addNote"></newNote>
+     </div>
 
-    <!-- список заметок  -->
-    <noteList :notes="notes" @removeNote="removeNote"></noteList>
+
+      <!-- список заметок  -->
+      <noteList :notes="notes" @removeNote="removeNote"></noteList>
+    </div>
   </div>
 </template>
 
@@ -27,7 +40,7 @@ export default {
   },
   data() {
     return {
-      title: "Мои заметки",
+      // title: "Мои заметки",
       message: null,
       note: {
         title: "",
@@ -75,12 +88,12 @@ export default {
       this.note.title = "";
       this.note.description = "";
     },
-    removeNote (index) {
-      this.notes.splice(index, 1)
-    }
+    removeNote(index) {
+      this.notes.splice(index, 1);
+    },
   },
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 </style>
